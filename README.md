@@ -1,35 +1,38 @@
-/* 
- * Company: DNAVAL
- * Author: Daniel Naval
- * Application: Login Admin Users
- */
+# Login Admin Users
 
-/*****  Description  *****/
+PHP application with authentication and access to manage the users
 
-PHP application with authentication and access to manage the users:
-- Edit users information
-- Add New users iformation
-- Delete users
-- Reset users password by forcing user to update their password
-This sample can be used to manage any type of object (Student, Employee, Book in a Library, etc...)
+## Description
 
+* Edit users information
+* Add New users information
+* Delete users
+* Reset users password by forcing user to update their password
 
-/*****  Database Config  *****/
+## Getting Started
 
-1- Create your MySQL database and then import the dnaval.sql file.
+### Dependencies
 
-
-/*****  Application Config  *****/
-
-1- Update the file zen-config-sample.php with your database credentials and place it outside of the root directory.
-2- Rename the zen-config-sample.php to zen-cionfig.php
-3- Update the location of the zen-config.php file ("require_once 'C:\wamp64\config\zen-config.php';") in models/DBController.php file 
-
-
-/*****  Web Technologies and version  *****/
-
+* Wampserver or LAMP server With the specification below.
 -- MySQL version: 5.7.31  (DATABASE)
-
 -- PHP Version: 7.4.9     (POGRAMMING LANGUAGE)
-
 -- Bootsrap version: 5    (HTML / CSS)
+
+### Installing
+
+* Create your MySQL database and then import the dnaval.sql file.
+* Update the file zen-config-sample.php with your database credentials and place it outside of the root directory.
+* Rename the zen-config-sample.php to zen-cionfig.php
+* Update the location of the zen-config.php file ("require_once 'C:\wamp64\config\zen-config.php';") in models/DBController.php file 
+
+### Executing program
+
+* Upload the project in a folder in your root directory
+* Open the project via browser and login with admin@dnaval.com / admin
+
+## Authors
+
+Contributors names and contact info
+
+Daniel Naval 
+[@navald27](https://twitter.com/navald27)
