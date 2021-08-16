@@ -48,7 +48,7 @@ if (!empty($_POST["csrf_token"])) {
             $tname_emp = $_FILES['pic']['tmp_name'];
             $resupload = $fx->dn_uploadfile($tname_emp,$pic_emp);
         } else {
-            $pic_emp = 'noimge.png';
+            $pic_emp = 'noimage.png';
         }
             
         $USRValue = array(
