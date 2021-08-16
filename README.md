@@ -17,6 +17,7 @@ PHP application with authentication and access to manage the users
 * MySQL version: 5.7.31  (DATABASE)
 * PHP Version: 7.4.9     (POGRAMMING LANGUAGE)
 * Bootsrap version: 5    (HTML / CSS)
+* Activate PDO_MySQL extension for PHP 7.4
 
 ### Installing
 
