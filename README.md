@@ -29,5 +29,7 @@ This sample can be used to manage any type of object (Student, Employee, Book in
 /*****  Web Technologies and version  *****/
 
 -- MySQL version: 5.7.31  (DATABASE)
+
 -- PHP Version: 7.4.9     (POGRAMMING LANGUAGE)
+
 -- Bootsrap version: 5    (HTML / CSS)
