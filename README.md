@@ -14,9 +14,9 @@ PHP application with authentication and access to manage the users
 ### Dependencies
 
 * Wampserver or LAMP server With the specification below.
--- MySQL version: 5.7.31  (DATABASE)
--- PHP Version: 7.4.9     (POGRAMMING LANGUAGE)
--- Bootsrap version: 5    (HTML / CSS)
+* MySQL version: 5.7.31  (DATABASE)
+* PHP Version: 7.4.9     (POGRAMMING LANGUAGE)
+* Bootsrap version: 5    (HTML / CSS)
 
 ### Installing
 
