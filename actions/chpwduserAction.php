@@ -26,6 +26,11 @@ if (!empty($_POST["csrf_token"])) {
            $idusr = $fx->sanitizeItem($_POST['usrid'], 'int');
            if((isset($_POST['tmpmdp1'])&&isset($_POST['tmpmdp2']))&&($_POST['tmpmdp1']==$_POST['tmpmdp2'])) {
                $pwd = password_hash($_POST['tmpmdp1'], PASSWORD_DEFAULT);
+           } else {
+               
+               $_SESSION['msg'] = '<div class="alert alert-danger alert-mg-b" role="alert"><strong>Error: </strong>Password did not match!</div>'; 
+               //Rediriect the page to the current page
+               header('Location: ../index.php?dan=resetuserpwd');
            }
 
            if(isset($_POST['chp']) && ($_POST['chp']=='on')) {
