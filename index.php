@@ -26,27 +26,26 @@ $year = date("Y");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous">
     <title>User Admin App</title>
+
+
   </head>
   <body>
 
+  <?php if(isset($_SESSION['UID']) && isset($_SESSION['username'])) { ?>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./images/Naval_Daniel_Logo.png" alt="Naval Daniel Logo">  
+            User Admin
+          </a>
+          <div class="d-flex">   
+                      Hello <?php echo $_SESSION['username']; ?>&nbsp; | &nbsp; 
+                      <a href="./logout.php">Logout</a>
+          </div>
 
-  <nav class="navbar navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="./images/Naval_Daniel_Logo.png" alt="Naval Daniel Logo">  
-        User Admin
-      </a>
-      <div class="d-flex">
-              <?php if(isset($_SESSION['UID']) && isset($_SESSION['username'])) { ?>
-                  Hello <?php echo $_SESSION['username']; ?>&nbsp; | &nbsp; 
-                  <a href="./logout.php">Logout</a>
-              <?php } ?>
-
-      </div>
-
-    </div>
-  </nav>
-  
+        </div>
+      </nav>
+  <?php } ?>
   <br/>
 
      <!-- CONTENT -->
@@ -72,6 +71,7 @@ $year = date("Y");
         ?>     
       <!-- END CONTENT -->
 
+    <?php if(isset($_SESSION['UID']) && isset($_SESSION['username'])) { ?>
       <!-- Footer -->
       <footer class="text-center text-lg-start bg-light text-muted">
           <!-- Copyright -->
@@ -82,6 +82,7 @@ $year = date("Y");
           <!-- Copyright -->
       </footer>
       <!-- Footer -->
+    <?php } ?>
 
     <!--  JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
