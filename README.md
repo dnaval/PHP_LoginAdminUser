@@ -9,6 +9,8 @@ PHP application with authentication and access to manage the users
 * Delete users
 * Reset users password by forcing user to update their password
 
+![Login_Admin_User](https://github.com/dnaval/PHP_LoginAdminUser/blob/PHP_Projects/Login_Admin_User.gif)
+
 ## Getting Started
 
 ### Dependencies
