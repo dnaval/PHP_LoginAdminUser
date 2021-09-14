@@ -23,7 +23,7 @@ if (!empty($_POST["csrf_token"])) {
     if (hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
 
            //Get value from form
-           $idusr = $role = $fx->sanitizeItem($_POST['uid'], 'int');
+           $idusr = $fx->sanitizeItem($_POST['uid'], 'int');
            $fullname = $fx->sanitizeItem($_POST['fname'], 'string');
            $email = $fx->sanitizeEmail($_POST['email']);
            $phone = $fx->sanitizeItem($_POST['phone'], 'string');
