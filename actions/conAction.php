@@ -39,7 +39,7 @@ $dbc= new DBController();
             //Recuperation des valeur du login
             if (isset($_POST["log"])&&isset($_POST["mdp"])) {
                 $pseudo = filter_var($_POST["log"], FILTER_SANITIZE_EMAIL);
-                $mdp = $_POST["mdp"];
+                $mdp = htmlspecialchars_decode(trim($_POST["mdp"]));
             } 
 
             //Verify if the user password is forced to change.
