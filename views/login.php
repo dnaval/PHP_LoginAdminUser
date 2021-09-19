@@ -96,8 +96,6 @@ body {
         </div>
 
     <?php } else { ?>
-
-        <h1>Reset your password</h1>
     
         <div class="login-form">
             <form method="post" action="./actions/conAction.php">
