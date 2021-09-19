@@ -105,14 +105,14 @@ body {
                 <img class="mb-4" src="./images/Naval_Daniel_Logo.png" alt="" width="90" height="90">
                 <h1 class="h3 mb-3 fw-normal">Please reset you password</h1>
 
-                <div class="form-floating">
-                <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" name="pass1">
-                <label for="floatingInput">Email address</label>
+                 <div class="form-floating">
+                <input type="password" class="form-control" id="floatingInput" placeholder="New Password" name="pass1">
+                <label for="floatingInput">New Password</label>
                 </div>
 
                 <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass2">
-                <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" name="pass2">
+                <label for="floatingPassword">Confirm Password</label>
                 </div>
 
                 <input type="hidden" name="csrf_token" value="<?php echo $fx->gen_token();?>" />
