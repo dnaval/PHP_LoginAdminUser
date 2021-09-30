@@ -70,7 +70,6 @@ body {
         }
     ?>
     <?php if((empty($_GET['chp']))||($_GET['chp']!=1)) {?>
-        <!-- <h1>Login to UserAdmin</h1> -->
     
         <div class="login-form">
             <form method="post" action="./actions/conAction.php">
@@ -96,28 +95,39 @@ body {
         </div>
 
     <?php } else { ?>
+
+        <?php if(isset($_SESSION['uex'])) {?>
     
-        <div class="login-form">
-            <form method="post" action="./actions/conAction.php">
+            <div class="login-form">
+                <form method="post" action="./actions/conAction.php">
 
-                <img class="mb-4" src="./images/Naval_Daniel_Logo.png" alt="" width="90" height="90">
-                <h1 class="h3 mb-3 fw-normal">Please reset you password</h1>
+                    <img class="mb-4" src="./images/Naval_Daniel_Logo.png" alt="" width="90" height="90">
+                    <h1 class="h3 mb-3 fw-normal">Please reset you password</h1>
 
-                 <div class="form-floating">
-                <input type="password" class="form-control" id="floatingInput" placeholder="New Password" name="pass1">
-                <label for="floatingInput">New Password</label>
-                </div>
+                    <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="New Password" name="pass1">
+                    <label for="floatingInput">New Password</label>
+                    </div>
 
-                <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" name="pass2">
-                <label for="floatingPassword">Confirm Password</label>
-                </div>
+                    <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" name="pass2">
+                    <label for="floatingPassword">Confirm Password</label>
+                    </div>
 
-                <input type="hidden" name="csrf_token" value="<?php echo $fx->gen_token();?>" />
-               
-                <button class="w-100 btn btn-lg btn-primary" type="submit">RESET</button>
+                    <input type="hidden" name="csrf_token" value="<?php echo $fx->gen_token();?>" />
+                  
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">RESET</button>
 
-            </form>
-        </div>
+                </form>
+            </div>
+
+        <?php 
+          unset($_SESSION['uex']); 
+        } else { 
+          $_SESSION['lalert'] = '<div class="alert alert-danger">Please insert you username and password!</div>';
+          header("Location: ./index.php?dan=login");
+        } 
+        ?>
+
     <?php } ?>    
 </main>
