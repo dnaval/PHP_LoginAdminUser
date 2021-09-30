@@ -17,7 +17,7 @@ $dbc= new DBController();
         
          $_SESSION['lalert'] = '<div class="alert alert-success" role="alert"><strong>Well done! </strong>Please login with your new password!</div>';
          ob_start();
-         header("Location: ../index.php");
+         header("Location: ../index.php?dan=login");
          ob_end_flush();
          ob_end_clean();
         
@@ -56,7 +56,7 @@ $dbc= new DBController();
                       if ($resultC) { 
                           foreach ($resultC as $keyC => $valC ) 
                           {
-                              $pchk = password_verify($mdp, $valC['password']);
+                            $pchk = password_verify($mdp, $valC['password']);
                             if (($pseudo==$valC['email'])&&($pchk==1)) {
                                  $_SESSION['UID'] = $valC['idusr'];
                                  $_SESSION['role']=$valC['roleid'];
@@ -67,29 +67,39 @@ $dbc= new DBController();
                     
                       }
 
-                       if(isset($_SESSION['UID'])) {
+                      if(isset($_SESSION['UID'])) {
                            header("Location: ../index.php?dan=home");
                       } else {
-                           $_SESSION['lalert'] = '<div class="alert alert-danger">The user or password are not correct, please try again!</div>';
+                           $_SESSION['lalert'] = '<div class="alert alert-danger">The username or password is not correct, please try again!</div>';
                            header("Location: ../index.php?dan=login");
-                       }
+                      }
                 
 
              } else {
                 //selection de l'id utilisateur
-                 $sqlR = "SELECT idusr, chpwd FROM `users` WHERE `email`='$pseudo'";
+                 $sqlR = "SELECT idusr, `password`, chpwd FROM `users` WHERE `email`='$pseudo'";
                  $resultR = $dbc->runQuery($sqlR);
+                 $_SESSION['uex'] = $pseudo;
                 
                  if ($resultR) { 
                          foreach ($resultR as $keyR => $valR) 
                          {
-                             $_SESSION['UID'] = $valR['idusr'];
-                             $_SESSION['CHP'] = $valR['chpwd'];
+                            $pchk = password_verify($mdp, $valR['password']);
+                            if ($pchk==1) {
+                                $_SESSION['UID'] = $valR['idusr'];
+                                $_SESSION['CHP'] = $valR['chpwd'];
+                            }
                          }
 
                  }
                  ob_start();
-                    header("Location: ../index.php?dan=login&chp=1");
+                    if(isset($_SESSION['UID'])) {
+                        header("Location: ../index.php?dan=login&chp=1");
+                    } else {
+                        $_SESSION['lalert'] = '<div class="alert alert-danger">The password is not correct, please try again!</div>';
+                        header("Location: ../index.php?dan=login");
+                    }
+                   
                  ob_end_flush();
                  ob_end_clean();
              }
